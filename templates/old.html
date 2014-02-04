@@ -1,0 +1,73 @@
+{{> header}}
+<div class="column-group gutters">
+    <div class="large-40 medium-100 small-100">
+        <h1>Hello!</h1>
+        <p>We are the Google Developer Group from the sunny city of Lisbon, Portugal!</p>
+
+        <p>Still wondering what that means? Check out this page: <a href="https://developers.google.com/groups/">https://developers.google.com/groups/</a> </p>
+
+        <p>Don't forget to add us to your circles!</p>
+
+        <br><br>
+        <p><i>Disclaimer: GDG Lisbon is an independent group; our activities and the opinions expressed on this page should in no way be linked to Google, the corporation.</i></p>
+    </div>
+    <div class="large-30 medium-50 small-100">
+        <h2>Our Page</h2>
+        <br>
+        <!-- Posicione esta tag onde você deseja que o widget apareça. -->
+        <div class="g-page" data-href="https://plus.google.com/105135300456431065608" data-rel="publisher"></div>
+
+        <!-- Posicione esta tag depois da última tag do widget. -->
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/platform.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+    </div>
+    <div class="large-30 medium-50 small-100">
+        <h2>Our Community</h2>
+        <br>
+        <!-- Place this tag where you want the widget to render. -->
+        <div class="g-community" data-href="https://plus.google.com/communities/115048360271988150509"></div>
+
+        <!-- Place this tag after the last widget tag. -->
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/platform.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+    </div>
+</div>
+
+<div class="column-group gutters">
+    <div class="large-30 medium-30 small-100">
+        <h1>Our Events</h1>
+    </div>
+</div>
+{{#each events}}
+<div class="column-group gutters">
+    <div class="large-30 medium-30 small-100">
+        <a href="{{url}}"><img src="{{picture}}" alt="{{name}}" /></a>
+    </div>
+    <div class="large-70 medium-70 small-100">
+        <a href="{{url}}"><h1>{{name}}</h1></a>
+        <p>{{description}}</p>
+        <p><i class="icon-time"></i> {{date}}</p>
+        <p><i class="icon-location-arrow"></i> {{location}}</p>
+    </div>
+</div>
+{{/each}}
+
+<div class="column-group gutters">
+    <div class="large-100 medium-100 small-100">
+        {{> mailchimp}}
+    </div>
+</div>
+
+<!--End mc_embed_signup-->
+
+{{>footer}}

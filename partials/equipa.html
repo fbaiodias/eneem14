@@ -1,0 +1,35 @@
+   <!-- Equipa Section
+   ================================================== -->
+   <section id="equipa">
+
+      <div class="row section-head">
+
+         <div class="col one-fourth">
+            <h2>A Equipa</h2>
+         </div>
+
+      </div>
+
+      <!-- Team Wrap End -->
+      <div class="row team-wrap">
+
+
+         {{#each team}}
+         <div class="col one-fourth">
+
+            <img src="https://graph.facebook.com/{{facebook}}/picture?type=large" alt=""/>
+
+            <div class"member-name">
+               <h5>{{name}}</h5>
+               <span>{{position}}</span>
+            </div>
+
+            <ul class="member-social">
+               <li><a href="https://www.facebook.com/{{facebook}}"><i class="icon-facebook"></i></a></li>
+            </ul>
+         </div>
+         {{/each}}
+
+      </div> <!-- Team Wrap End -->
+
+   </section>  <!-- Equipa Section End -->
