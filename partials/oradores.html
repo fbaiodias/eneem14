@@ -1,16 +1,16 @@
-   <!-- Equipa Section
+   <!-- oradores Section
    ================================================== -->
-   <section id="equipa">
+   <section id="oradores">
 
       <div class="row section-head">
 
          <div class="col one-fourth">
-            <h2>A Equipa</h2>
+            <h2>Oradores</h2>
          </div>
 
       </div>
 
-         {{#each team}}
+         {{#each speakers}}
          <!-- Team Wrap End -->
          <div class="row team-wrap">
             {{#each cells}}
@@ -21,12 +21,8 @@
 
                <div class"member-name">
                   <h5>{{name}}</h5>
-                  <span>{{position}}</span>
+                  <span>{{description}}</span>
                </div>
-
-               <ul class="member-social">
-                  <li><a href="https://www.facebook.com/{{facebook}}"><i class="icon-facebook"></i></a></li>
-               </ul>
             </div>
             {{/each}}
          </div>
@@ -34,4 +30,4 @@
 
       </div> <!-- Team Wrap End -->
 
-   </section>  <!-- Equipa Section End -->
+   </section>  <!-- oradores Section End -->

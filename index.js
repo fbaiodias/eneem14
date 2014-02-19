@@ -3,7 +3,9 @@ var Tabletop = require('tabletop');
 
 var sheetData = [],
 	texts = [],
-	team = []
+    team = [],
+    speakers = [],
+    covers = [],
     faq = [],
     partners = [];
 
@@ -44,6 +46,14 @@ function getData(reply) {
                     partners = sheetData.Partners.elements;
                     console.log("PARTNERS", partners);
                 }
+                if(sheetData.Speakers){
+                    speakers = sheetData.Speakers.elements;
+                    console.log("SPEAKERS", speakers);
+                }
+                if(sheetData.Covers){
+                    covers = sheetData.Covers.elements;
+                    console.log("COVERS", covers);
+                }
             }
 	    },
 	    simpleSheet: false 
@@ -70,10 +80,12 @@ server.route(routes);
 function homeHandler (request, reply) {
     // Render the view with the custom greeting
     reply.view('index.html', { 
+        covers: covers,
         texts: texts,
-        team: team,
+        team: toGrid(team),
         faq: faq,
-        partners: partners
+        partners: toGrid(partners),
+        speakers: toGrid(speakers)
     });
 };
 
@@ -86,3 +98,16 @@ server.start(function () {
     uri = server.info.uri;
     console.log('Server started at: ' + server.info.uri);
 });
+
+function toGrid(data){
+    var rows=[],
+        step=4,
+        i=0,
+        L=data.length;
+    
+    for(; i<L ; i+=step){
+        rows.push({cells:data.slice(i,i+step)});
+    };
+
+    return rows;
+}

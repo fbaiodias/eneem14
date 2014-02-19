@@ -11,14 +11,16 @@
 
       </div>
 
+      {{#each partners}}
       <!-- Team Wrap End -->
       <div class="row team-wrap">
-         {{#each partners}}
+         {{#each cells}}
          <div class="col one-fourth">
-            <img src="{{image}}" alt=""/>
+            <img src="images/{{image}}" alt=""/>
          </div>
          {{/each}}
       </div>
-
+      {{/each}}
+         
 
    </section> <!-- Parceiros Section End-->
